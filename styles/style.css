@@ -6,8 +6,10 @@
   --font-heading-1: "Cuprum", sans-serif;
   --font-heading-2: "Oregano", cursive;
 
-  --color-brand: hsl(212, 100%, 47%);
-  --color-text: hsl(221, 58%, 9%);
+  /* hsl values */
+  --color-brand: 212 100% 47%;
+  --color-text: 221 58% 9%;
+  --color-white: 0 0% 97%;
 }
 
 /* ======= */
@@ -23,27 +25,36 @@ html {
   font-size: 14px;
 }
 
-body {
-  font-family: var(--font-main);
-  color: var(--color-text);
-  min-height: 100vh;
-  overflow: hidden;
-}
-
 body,
 h1,
 h2,
-p {
+p,
+ul {
   margin: 0;
 }
 
-img {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
 
 button {
   font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ========== */
@@ -60,9 +71,18 @@ button {
 /* ============== */
 /* Custom Styles */
 /* ============ */
+body {
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -40px;
+  font-family: var(--font-main);
+  color: hsl(var(--color-text));
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
 .grid-layout {
-  text-align: center;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-areas:
@@ -70,8 +90,10 @@ button {
     "main      main"
     "rightSide rightSide"
     "footer    footer";
-  gap: 1rem;
-  margin: 0.5rem;
+  gap: 3rem;
+  margin: 1rem;
+  align-items: center;
+  /* height: calc(100% - 2rem); */
 
   /* grid-template-rows: repeat(12, 1fr); */
 }
@@ -92,12 +114,10 @@ button {
   grid-area: footer;
 }
 
-.header,
-.main,
 .left-side,
-.right-side,
-.footer {
+.right-side {
   border: 1px solid black;
+  border-radius: 0.2em;
 }
 
 /* Header */
@@ -114,23 +134,20 @@ button {
 
 .name {
   font-family: var(--font-heading-2);
-  color: var(--color-brand);
+  color: hsl(var(--color-brand));
   text-transform: capitalize;
   font-size: 19px;
   transition: opacity 1s ease-in-out;
 }
 
 .hamburger-btn {
-  background: none;
-  border: none;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  cursor: pointer;
 }
 
 .hamburger-btn__line {
-  background-color: var(--color-text);
+  background-color: hsl(var(--color-text));
   width: 20px;
   height: 2px;
   border-radius: 100rem;
@@ -156,3 +173,61 @@ button {
 .moon {
   width: 12px;
 } */
+
+/* Main */
+.title {
+  font-family: var(--font-heading-1);
+  font-size: 3.15rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.subtitle {
+  text-align: justify;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.btn-primary {
+  background-color: hsl(var(--color-brand));
+  color: hsl(var(--color-white));
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  box-shadow: 0 2px 6px hsla(var(--color-brand) / 0.4);
+  transition: background-color, box-shadow 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: hsla(var(--color-brand) / 0.95);
+  box-shadow: 0 6px 15px hsla(var(--color-brand) / 0.2);
+}
+
+/* Right Side */
+.right-side {
+  text-align: center;
+  height: 150px;
+  background-color: darkgray;
+  border: currentColor;
+}
+
+/* Footer */
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links a {
+  padding: 0.25rem;
+}
+
+.social-links__email {
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.social-links svg {
+  width: 17px;
+}
