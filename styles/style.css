@@ -1,0 +1,158 @@
+/* ================== */
+/* Custom Properties */
+/* ================ */
+:root {
+  --font-main: "Noto Sans", sans-serif;
+  --font-heading-1: "Cuprum", sans-serif;
+  --font-heading-2: "Oregano", cursive;
+
+  --color-brand: hsl(212, 100%, 47%);
+  --color-text: hsl(221, 58%, 9%);
+}
+
+/* ======= */
+/* Resets */
+/* ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+/* ========== */
+/* Utilities */
+/* ======== */
+.removed {
+  display: none !important;
+}
+
+.hidden {
+  opacity: 0 !important;
+}
+
+/* ============== */
+/* Custom Styles */
+/* ============ */
+
+.grid-layout {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas:
+    "header    header"
+    "main      main"
+    "rightSide rightSide"
+    "footer    footer";
+  gap: 1rem;
+  margin: 0.5rem;
+
+  /* grid-template-rows: repeat(12, 1fr); */
+}
+
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.left-side {
+  grid-area: leftSide;
+}
+.right-side {
+  grid-area: rightSide;
+}
+.footer {
+  grid-area: footer;
+}
+
+.header,
+.main,
+.left-side,
+.right-side,
+.footer {
+  border: 1px solid black;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 25px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--font-heading-2);
+  color: var(--color-brand);
+  text-transform: capitalize;
+  font-size: 19px;
+  transition: opacity 1s ease-in-out;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.hamburger-btn__line {
+  background-color: var(--color-text);
+  width: 20px;
+  height: 2px;
+  border-radius: 100rem;
+}
+
+/* commented lines are for toggling mobile menu */
+/* .nav-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-transform: capitalize;
+  flex-basis: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.moon {
+  width: 12px;
+} */
