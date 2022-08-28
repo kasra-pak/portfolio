@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@1,700&family=Noto+Sans:wght@400;600&family=Oregano&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;1,700&family=Noto+Sans:wght@400;600&family=Oregano&display=swap"
       rel="stylesheet"
     />
 
@@ -31,40 +31,37 @@
         </div>
       </aside>
       <div class="container">
-        <header class="header">
-          <nav class="navbar">
-            <div class="logo">
-              <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                <desc>cyclone</desc>
-                <path
-                  d="M65.79 57.85c-2.04 2.3-1.21 5.16-.07 6.57 2.13 2.64 5.29 2.79 6.97 6.12 1.48 2.93.59 8.25-5.96 8.69s-13.05-4.88-14.43-11.2c-1.71-7.85.63-16.61 9.88-21.1s21.4-2.18 28.11 5.01c6.94 7.42 11.86 17.04 8.54 30.96s-17.9 25.82-40.73 23.45c-18.8-1.95-36.11-18.96-35.28-44.64.81-25.02 21.6-40.36 41.13-43.45 20.19-3.19 34.42 5.47 42.73 12.08 5.17 4.12 9.62 8.72 10.9 10.13 1.78 1.96 4.48 2.06 4.85-1.08.49-4.15-2.09-9.81-8.11-16.91-6.02-7.09-23.48-20.88-52.14-18.2C18.08 8.39 2.89 47.62 5.9 72.01s20.3 51.23 60.24 52.07c24.42.51 43.29-14.96 49.16-35.43 3.25-11.33 2.23-25.66-4.64-36.82-9.23-14.97-19.76-21.05-34.16-22.5-11.53-1.16-22.47 2.17-29.67 8.64-14.7 13.2-15.15 37.01.17 48.95 8.09 6.31 17.73 7.47 25.14 5.18 5.09-1.57 9.53-4.28 12.14-9.34 3.1-6.02 2.8-11.93.66-16.56-1.77-3.84-5.52-7.07-8.79-8.72-4.93-2.47-8.44-1.79-10.36.37z"
-                />
-              </svg>
-            </div>
+        <div class="header-container">
+          <header>
             <h1 class="name">
               <!-- k<span>asra </span>p<span>ak </span>e<span>teghad</span> -->
               kasra<span> pak eteghad</span>
             </h1>
+          </header>
+          <nav class="navbar">
             <ul id="nav-links" class="nav-links">
               <li class="nav-item">about</li>
               <li class="nav-item">works</li>
               <li class="nav-item">contact</li>
               <li class="nav-item moon">
-                <img src="./images/moon.svg" alt="moon" />
+                <svg viewBox="0 0 530 530">
+                  <desc>moon</desc>
+                  <path
+                    d="M431.175 450.958c-1.219-3.65-4.612-6.143-8.484-6.103h-.335c-57.937 0-114.093-20.686-158.144-58.253l-19.197-18.253c-42.908-45.444-66.533-104.892-66.533-167.429 0-71.262 31.052-138.768 85.196-185.209A8.931 8.931 0 0 0 257.265.02C123.247 8.983 18.264 121.3 18.264 255.721 18.264 397.034 133.23 512 274.542 512c55.868 0 108.955-17.659 153.52-51.067a8.931 8.931 0 0 0 3.113-9.975z"
+                  />
+                  <path
+                    d="M432.945 155.259a3.914 3.914 0 0 0-3.16-2.665l-34.768-5.052-15.546-31.503a3.92 3.92 0 0 0-3.511-2.183 3.911 3.911 0 0 0-3.511 2.183l-15.55 31.503-34.766 5.052a3.92 3.92 0 0 0-3.162 2.665 3.92 3.92 0 0 0 .99 4.014l25.16 24.521-5.937 34.626a3.908 3.908 0 0 0 1.557 3.829 3.91 3.91 0 0 0 4.121.297l31.098-16.347 31.094 16.347a3.92 3.92 0 0 0 4.126-.297 3.912 3.912 0 0 0 1.557-3.829l-5.937-34.626 25.155-24.521a3.91 3.91 0 0 0 .99-4.014z"
+                  />
+                  <circle cx="359.704" cy="327.305" r="25.632" />
+                  <path
+                    d="M493.737 273.623c0 9.886-8.012 17.9-17.9 17.9-9.885 0-17.898-8.014-17.898-17.9 0-9.887 8.014-17.899 17.898-17.899 9.888 0 17.9 8.013 17.9 17.899z"
+                  />
+                </svg>
               </li>
             </ul>
-            <button
-              class="hamburger-btn"
-              aria-controls="nav-links"
-              aria-pressed="false"
-            >
-              <span class="hamburger-btn__line"></span>
-              <span class="hamburger-btn__line"></span>
-              <span class="hamburger-btn__line"></span>
-              <span class="hamburger-btn__line"></span>
-            </button>
           </nav>
-        </header>
+        </div>
+
         <main class="main">
           <h2 class="title">Hi,<br />I'm Kasra<br />Frontend Developer</h2>
           <p class="subtitle">
@@ -72,7 +69,7 @@
             University of Kurdistan. Has great passion for writting clean and
             maintainable code. Also enjoys learning new things from new people.
           </p>
-          <button class="btn-primary">Resume</button>
+          <button class="btn-primary">My Resume</button>
           <div class="right-side">Right Side</div>
         </main>
         <footer class="footer">

@@ -16,6 +16,7 @@
 //     navLinksEl.classList.remove("open");
 //   } else {
 //     e.currentTarget.setAttribute("aria-pressed", "true");
+//     navLinksEl.classList.add("open");
 //   }
 
 //   nameEl.classList.toggle("hidden");
