@@ -100,7 +100,7 @@ body {
 
 .navbar {
   margin-top: 0.25em;
-  border-top: 1px solid hsla(var(--color-brand) / 0.1);
+  border-top: 1px solid hsla(var(--color-text) / 0.1);
 }
 
 .logo {
@@ -130,6 +130,43 @@ body {
   align-items: center;
   gap: 0.25em 1.5em;
   overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.fade-scroll {
+  position: relative;
+}
+
+.fade-scroll::before,
+.fade-scroll::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.fade-scroll::before {
+  background: linear-gradient(to right, hsl(var(--color-white)), transparent);
+  left: 0;
+}
+
+.fade-scroll::after {
+  background: linear-gradient(to left, hsl(var(--color-white)), transparent);
+  right: 0;
+}
+
+.fade-scroll.fade-left::before,
+.fade-scroll.fade-right::after {
+  opacity: 1;
 }
 
 .nav-item {
@@ -291,13 +328,6 @@ body {
 }
 
 @media screen and (min-width: 650px) {
-  /* .nav-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5em;
-  } */
-
   .header-container {
     display: flex;
     justify-content: space-between;
