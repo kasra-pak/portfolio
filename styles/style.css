@@ -112,14 +112,9 @@ body {
   font-family: var(--font-heading-2);
   font-size: 1.5rem;
   color: hsl(var(--color-brand));
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.5px;
-  min-width: max-content;
   transition: opacity 1s ease-in-out;
-}
-
-.name span {
-  display: none;
 }
 
 .nav-links {
@@ -266,16 +261,6 @@ body {
 /* Media Queries */
 /* ============ */
 
-@media screen and (min-width: 220px) {
-  .name {
-    text-transform: capitalize;
-  }
-
-  .name span {
-    display: inline;
-  }
-}
-
 @media screen and (min-width: 340px) {
   .subtitle {
     line-height: 1.5em;
@@ -329,7 +314,6 @@ body {
   }
 
   .name {
-    font-size: 1.5rem;
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     letter-spacing: 1px;
   }
