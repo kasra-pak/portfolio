@@ -81,6 +81,7 @@ body {
   flex-direction: column;
   gap: 3rem;
   padding: 1rem;
+  padding: clamp(1rem, 5vw, 2rem);
   min-height: 100vh;
 }
 
@@ -89,9 +90,9 @@ body {
   background-image: url("../images/bg-cyclone.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: -150px 10%;
+  background-position: -150px;
   width: 20%;
-  max-width: 250px;
+  max-width: 240px;
   flex-shrink: 0;
   display: none;
 }
@@ -109,7 +110,7 @@ body {
 
 .name {
   font-family: var(--font-heading-2);
-  font-size: 20px;
+  font-size: 1.5rem;
   color: hsl(var(--color-brand));
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -128,7 +129,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.25em 1.5em;
+  gap: 1.5em;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -183,7 +184,7 @@ body {
 }
 
 .moon {
-  width: 15px;
+  width: 16px;
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -191,22 +192,17 @@ body {
 /* Main */
 .main {
   flex-grow: 1;
-  /* max-width: 370px; */
-  margin-inline: auto;
-  /* border: 1px solid black; */
 }
 
 .title {
   font-family: var(--font-heading-1);
   font-size: clamp(2rem, 11vw, 3.15rem);
-  /* font-size: 3.15rem; */
   font-weight: bold;
   font-style: italic;
 }
 
 .subtitle {
   text-align: justify;
-  text-justify: inter-word;
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
@@ -263,7 +259,7 @@ body {
 }
 
 .social-links svg {
-  width: 17px;
+  width: 16px;
 }
 
 /* ============== */
@@ -296,16 +292,10 @@ body {
   }
 }
 
-@media screen and (min-width: 500px) {
-  .container {
-    padding: 2rem;
-  }
-}
-
 @media screen and (min-width: 568px) {
   .container {
     flex-grow: 1;
-    padding: 2rem 3rem;
+    padding: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 6rem);
   }
 
   .left-side {
@@ -322,8 +312,8 @@ body {
 
   .left-side .logo {
     fill: hsl(var(--color-white));
-    width: 35px;
-    margin: 1.85rem auto;
+    width: clamp(35px, 5vw, 50px);
+    margin: clamp(1.85rem, 4vw, 3.5rem) auto;
   }
 }
 
@@ -338,8 +328,55 @@ body {
     border: none;
   }
 
+  .name {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    letter-spacing: 1px;
+  }
+
+  .nav-links,
+  .social-links {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    letter-spacing: 0.5px;
+  }
+
+  .moon {
+    width: clamp(16px, 2.25vw, 20px);
+  }
+
+  .title {
+    font-size: clamp(3.15rem, 6vw, 6rem);
+    /* font-size: 4rem; */
+  }
+
+  .subtitle {
+    max-width: 512px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
   .social-links {
     max-width: 450px;
     margin-left: auto;
+  }
+
+  .social-links svg {
+    width: clamp(16px, 2.25vw, 20px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-links {
+    gap: clamp(1.5em, 3.5vw, 3em);
+  }
+
+  .main {
+    display: flex;
+    gap: 5em;
+  }
+
+  .right-side {
+    height: auto;
+    margin: 0;
+    flex-grow: 1;
   }
 }
