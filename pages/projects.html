@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/cyclone.svg" type="image/svg" />
-    <title>Kasra Pak Eteghad</title>
+    <title>Kasra's Projects</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,8 @@
     />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/projects.css" />
   </head>
   <body>
     <div class="split-screen">
@@ -35,16 +36,14 @@
           <header>
             <h1 class="name">
               <!-- k<span>asra </span>p<span>ak </span>e<span>teghad</span> -->
-              <a href="./index.html">kasra<span> pak eteghad</span></a>
+              <a href="../index.html">kasra<span> pak eteghad</span></a>
             </h1>
           </header>
           <nav class="navbar">
             <div class="fade-scroll">
               <ul id="nav-links" class="nav-links">
                 <li class="nav-item"><a href="#">blog</a></li>
-                <li class="nav-item">
-                  <a href="./pages/projects.html">projects</a>
-                </li>
+                <li class="nav-item active">projects</li>
                 <li class="nav-item"><a href="#">contact</a></li>
                 <li class="nav-item moon">
                   <svg viewBox="0 0 530 530">
@@ -67,17 +66,31 @@
         </div>
 
         <main class="main">
-          <div class="main__content">
-            <h2 class="title">Hi,<br />I'm Kasra<br />Frontend Developer</h2>
-            <p class="subtitle">
-              A 25 year young software engineer, based in Iran. Graduated from
-              University of Kurdistan. Has great passion for writting clean and
-              maintainable code. Also enjoys learning new things from new
-              people.
-            </p>
-            <button class="btn-primary">My Resume</button>
+          <div class="project-card">
+            <div class="card__header">
+              <h2 class="project-title">Example something project</h2>
+            </div>
+            <div class="card__content">
+              <ul class="project-techs">
+                <li>html</li>
+                <li>css</li>
+                <li>react.js</li>
+              </ul>
+              <p class="project-desc">
+                An example website that does something this is a subtitle. and
+                i've got nothing to do here.
+              </p>
+              <ul class="features">
+                <li>user login</li>
+                <li>admin dashboard</li>
+                <li>theme togglers</li>
+              </ul>
+            </div>
+            <div class="card__footer">
+              <button class="btn-primary">My Resume</button>
+            </div>
           </div>
-          <!-- <div class="right-side">Right Side</div> -->
+          <!-- <div class="projects-list">Right Side</div> -->
         </main>
 
         <footer class="footer">
