@@ -237,10 +237,6 @@ body {
 
 /* Right Side */
 .right-side {
-  text-align: center;
-  height: 150px;
-  background-color: darkgray;
-  border-radius: 0.2em;
   margin-top: 2rem;
 }
 
