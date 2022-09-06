@@ -36,7 +36,7 @@
           <header>
             <h1 class="name">
               <!-- k<span>asra </span>p<span>ak </span>e<span>teghad</span> -->
-              <a href="../index.html">kasra<span> pak eteghad</span></a>
+              <a href="./index.html">kasra<span> pak eteghad</span></a>
             </h1>
           </header>
           <nav class="navbar">
@@ -69,75 +69,89 @@
           <section class="project-card">
             <div class="card__header">
               <h2 class="project-title">Example something project</h2>
-              <svg
-                class="caret-down"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 320 512"
-              >
-                <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                <path
-                  d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-                />
-              </svg>
+              <button class="drop-down-toggler">
+                <svg
+                  class="caret-down"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                  />
+                </svg>
+              </button>
             </div>
-            <div class="card__content">
-              <ul class="project-techs">
-                <li>html</li>
-                <li>css</li>
-                <li>react.js</li>
+            <div class="drop-down-container">
+              <ul class="drop-down-list">
+                <li class="drop-down__item">tic tac toe</li>
+                <li class="drop-down__item">movie database</li>
+                <li class="drop-down__item">space tourism</li>
+                <li class="drop-down__item">tic tac toe</li>
+                <li class="drop-down__item">movie database</li>
+                <li class="drop-down__item active">example something</li>
+                <li class="drop-down__item">tic tac toe</li>
+                <li class="drop-down__item">movie database</li>
               </ul>
-              <p class="project-desc">
-                An example website that does something this is a subtitle. and
-                i've got nothing to do here.
-              </p>
-              <ul class="project-features">
-                <li>
-                  <span class="check">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                      <path
-                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-                      />
-                    </svg>
-                  </span>
-                  <p>user login</p>
-                </li>
-                <li>
-                  <span class="check">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                      <path
-                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-                      />
-                    </svg>
-                  </span>
-                  <p>admin dashboard</p>
-                </li>
-                <li>
-                  <span class="check">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                      <path
-                        d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-                      />
-                    </svg>
-                  </span>
-                  <p>theme togglers</p>
-                </li>
-              </ul>
-            </div>
-            <div class="card__footer">
-              <button class="btn-primary-black">Live Site</button>
-              <button class="btn-secondary-black">View Code</button>
+              <div class="card__content">
+                <ul class="project-techs">
+                  <li>html</li>
+                  <li>css</li>
+                  <li>react.js</li>
+                </ul>
+                <p class="project-desc">
+                  An example website that does something this is a subtitle. and
+                  i've got nothing to do here.
+                </p>
+                <ul class="project-features">
+                  <li>
+                    <span class="check">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        />
+                      </svg>
+                    </span>
+                    <p>user login</p>
+                  </li>
+                  <li>
+                    <span class="check">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        />
+                      </svg>
+                    </span>
+                    <p>admin dashboard</p>
+                  </li>
+                  <li>
+                    <span class="check">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        />
+                      </svg>
+                    </span>
+                    <p>theme togglers</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="card__footer">
+                <button class="btn-primary-black">Live Site</button>
+                <button class="btn-secondary-black">View Code</button>
+              </div>
             </div>
           </section>
           <section class="right-side">
@@ -216,6 +230,6 @@
       </div>
     </div>
 
-    <script src="../script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -16,6 +16,13 @@
   display: flex;
   justify-content: space-between;
   gap: 1em;
+  padding-bottom: 0.5em;
+}
+
+.card__header.select-mode {
+  border-bottom: 1px solid hsl(var(--color-text) / 0.1);
+  text-shadow: 0 2px 6px hsl(var(--color-text) / 0.1);
+  transition: text-shadow 0.2s ease;
 }
 
 .caret-down {
@@ -24,14 +31,67 @@
   flex-shrink: 0;
 }
 
+.drop-down-container {
+  position: relative;
+  overflow-y: scroll;
+
+  /* border: 1px solid black; */
+  /* padding-top: 0.5em; */
+}
+
+.drop-down-list {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  padding: 0.75em;
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform-origin: top;
+  /* border: 1px solid salmon; */
+}
+
+.drop-down-list.open {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.drop-down-list.open ~ .card__content,
+.drop-down-list.open ~ .card__footer {
+  opacity: 0;
+}
+
+.drop-down__item {
+  background-color: hsl(var(--color-white));
+  text-transform: capitalize;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 2px 6px hsl(var(--color-text) / 0.1);
+  transition: box-shadow 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.drop-down__item:hover {
+  box-shadow: 0 2px 6px hsl(var(--color-text) / 0.2);
+}
+
+.drop-down__item.active {
+  box-shadow: 0 2px 6px hsl(var(--color-brand) / 0.2);
+  color: hsl(var(--color-brand));
+}
+
 .card__content {
   border-top: 1px solid hsl(var(--color-text) / 0.1);
   border-bottom: 1px solid hsl(var(--color-text) / 0.1);
-  margin: 0.5em 0;
+  margin-bottom: 0.5em;
   padding: 1em 0;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  transition: opacity 0.2s ease;
 }
 
 .project-techs {
@@ -77,6 +137,7 @@
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
+  transition: opacity 0.2s ease;
 }
 
 .btn-primary-black {
@@ -118,6 +179,7 @@
   );
   border-radius: 0.5em;
   padding: 1em;
+  display: none;
 }
 
 .projects-list > h2 {
@@ -172,13 +234,36 @@
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
 
-  .projects-list__item {
+  .projects-list__item,
+  .drop-down__item {
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .caret-down {
+  .card__header.select-mode {
+    border-bottom: none;
+    text-shadow: none;
+  }
+
+  .drop-down-toggler {
     display: none;
+  }
+
+  .drop-down-list.open ~ .card__content,
+  .drop-down-list.open ~ .card__footer {
+    opacity: 1;
+  }
+
+  .drop-down-list {
+    display: none;
+  }
+
+  .project-card {
+    align-self: flex-start;
+  }
+
+  .projects-list {
+    display: block;
   }
 }
