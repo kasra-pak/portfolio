@@ -25,10 +25,15 @@
   transition: text-shadow 0.2s ease;
 }
 
-.caret-down {
+.chevron-down {
   width: 17px;
   fill: hsl(var(--color-text));
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.card__header.select-mode .chevron-down {
+  transform: rotateX(-180deg);
 }
 
 .drop-down-container {
