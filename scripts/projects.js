@@ -107,8 +107,8 @@ function updateProjectCard(project) {
   );
 
   cardFooter.innerHTML = `
-    <a href=${project.url} class="btn-primary-black">Live Site</a>
-    <a href=${project.repository} class="btn-secondary-black">View Code</a>
+    <a href=${project.url} target="_blank" class="btn-primary-black">Live Site</a>
+    <a href=${project.repository} target="_blank" class="btn-secondary-black">View Code</a>
   `;
 }
 
