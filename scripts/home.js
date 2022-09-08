@@ -1,4 +1,4 @@
-// Fade Scroll functionality
+// Navbar Fade Scroll functionality (tiny screens)
 const navLinks = document.querySelector(".nav-links");
 const fadeScroll = document.querySelector(".fade-scroll");
 
@@ -25,16 +25,4 @@ function toggleFadeScrollEffect() {
   } else {
     fadeScroll.classList.remove("fade-left", "fade-right");
   }
-}
-
-// Dropdown List functionality
-const dropdownToggler = document.querySelector(".drop-down-toggler");
-const dropdownList = document.querySelector(".drop-down-list");
-const cardHeader = document.querySelector(".card__header");
-
-dropdownToggler.addEventListener("click", toggleDropdown);
-
-function toggleDropdown() {
-  dropdownList.classList.toggle("open");
-  cardHeader.classList.toggle("select-mode");
 }
