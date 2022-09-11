@@ -43,7 +43,6 @@ const projects = [
   },
 ];
 
-const dropdownToggler = document.querySelector(".drop-down-toggler");
 const dropdownList = document.querySelector(".drop-down-list");
 const cardHeader = document.querySelector(".card__header");
 const projectTitle = document.querySelector(".project-title");
@@ -53,75 +52,70 @@ const projectTechs = document.querySelector(".project-techs");
 const projectFeatures = document.querySelector(".project-features");
 const projectsList = document.querySelector(".projects-list > ul");
 
-let selectedProjectIndex = "2";
+const initialProjectId = "1";
 
 window.addEventListener("DOMContentLoaded", () => {
-  populateLists();
-  displayDetail(selectedProjectIndex);
+  fillProjectsList();
+  displayProjectDetail(initialProjectId);
 });
+window.addEventListener("click", handleProjectToggle);
 
-dropdownToggler.addEventListener("click", toggleDropdown);
+function handleProjectToggle(e) {
+  const listItemClicked = e.target.matches(".list-item");
+  const toggleBtnClicked = e.target.matches(".drop-down-toggler");
 
-function populateLists() {
-  dropdownList.append(
-    ...projects.map(item => createListItem(item.title, item.id))
-  );
+  if (listItemClicked) {
+    const clickedProjectId = e.target.dataset.projectId;
 
-  projectsList.append(
-    ...projects.map(item => createListItem(item.title, item.id))
-  );
+    displayProjectDetail(clickedProjectId);
+    closeDropDown();
+
+    projectsList.childNodes.forEach((listItem, idx) => {
+      if (listItem.dataset.projectId === clickedProjectId) {
+        listItem.classList.add("active");
+        dropdownList.childNodes[idx].classList.add("active");
+      } else {
+        listItem.classList.remove("active");
+        dropdownList.childNodes[idx].classList.remove("active");
+      }
+    });
+  } else if (toggleBtnClicked) {
+    dropdownList.classList.toggle("open");
+    cardHeader.classList.toggle("select-mode");
+  } else {
+    closeDropDown();
+  }
 }
 
-function createListItem(text, id) {
-  const li = document.createElement("li");
-  li.classList.add("list-item");
-  li.setAttribute("data-project-id", id);
-  li.textContent = text;
-  li.addEventListener("click", e => {
-    selectedProjectIndex = e.currentTarget.dataset.projectId;
-    displayDetail(selectedProjectIndex);
-    dropdownList.classList.remove("open");
-    cardHeader.classList.remove("select-mode");
+function closeDropDown() {
+  dropdownList.classList.remove("open");
+  cardHeader.classList.remove("select-mode");
+}
+
+function fillProjectsList() {
+  const fragment = document.createDocumentFragment();
+
+  projects.forEach(project => {
+    const li = document.createElement("li");
+    li.classList.add("list-item");
+    if (project.id === initialProjectId) {
+      li.classList.add("active");
+    }
+    li.setAttribute("data-project-id", project.id);
+    li.textContent = project.title;
+    fragment.appendChild(li);
   });
-  return li;
+
+  const fragmentCopy = fragment.cloneNode(true);
+
+  projectsList.appendChild(fragment);
+  dropdownList.appendChild(fragmentCopy);
 }
 
-function displayDetail(projectId) {
-  // const targetProjectId = ;
-
-  const [targetProject] = projects.filter(item => item.id === projectId);
-
-  updateProjectCard(targetProject);
-}
-
-function updateProjectCard(project) {
-  projectTitle.textContent = project.title;
-  projectDesc.textContent = project.desc;
-
-  projectTechs.replaceChildren(
-    ...project.techs.map(tech => createTechItem(tech))
-  );
-
-  projectFeatures.replaceChildren(
-    ...project?.features.map(feature => createFeatureItem(feature))
-  );
-
-  cardFooter.innerHTML = `
-    <a href=${project.url} target="_blank" class="btn-primary-black">Live Site</a>
-    <a href=${project.repository} target="_blank" class="btn-secondary-black">View Code</a>
-  `;
-}
-
-function createTechItem(text) {
-  const li = document.createElement("li");
-  li.textContent = text;
-  return li;
-}
-
-function createFeatureItem(text) {
-  const li = document.createElement("li");
-  li.innerHTML = `
-    <span class="check">
+function displayProjectDetail(projectId) {
+  const targetProject = projects.find(project => project.id === projectId);
+  const fragment = document.createDocumentFragment();
+  const checkIconSVG = `
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -131,13 +125,31 @@ function createFeatureItem(text) {
           d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
         />
       </svg>
-    </span>
-    <p>${text}</p>
-  `;
-  return li;
-}
+    `;
 
-function toggleDropdown() {
-  dropdownList.classList.toggle("open");
-  cardHeader.classList.toggle("select-mode");
+  projectTitle.textContent = targetProject.title;
+  projectDesc.textContent = targetProject.desc;
+
+  targetProject.techs.forEach(item => {
+    const listItem = document.createElement("li");
+    listItem.textContent = item;
+    fragment.appendChild(listItem);
+  });
+  projectTechs.replaceChildren(fragment);
+
+  targetProject.features.forEach(item => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <span class="check">${checkIconSVG}</span>
+      <p>${item}</p>
+    `;
+
+    fragment.appendChild(listItem);
+  });
+  projectFeatures.replaceChildren(fragment);
+
+  cardFooter.innerHTML = `
+    <a href=${targetProject.url} target="_blank" class="btn-primary-black">Live Site</a>
+    <a href=${targetProject.repository} target="_blank" class="btn-secondary-black">View Code</a>
+  `;
 }
